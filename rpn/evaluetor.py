@@ -51,7 +51,9 @@ def postixEval(stack: list) -> int:
         if symbol.isdigit():
             res.append(int(symbol))
         elif not (res == []):
-            temp = operators.get(symbol)(res.pop(), res.pop())
+            b = res.pop()
+            a = res.pop()
+            temp = operators.get(symbol)(a, b)
             res.append(temp)
     return res.pop()
 
